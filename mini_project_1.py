@@ -102,6 +102,5 @@ while(start):
     print(template, end = "\n" * 3)
     inputed = input("Play again?(Y/N): ").lower() 
     start = (inputed == "y")
-    
 
 os.system("clear")
