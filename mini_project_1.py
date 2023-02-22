@@ -1,15 +1,23 @@
 import os
+import random
 
 start = True
 while(start):
     os.system("clear")
     
     number_of_template = input("Input the number of template(1 - 3): ")
-    while not number_of_template in ["1", "2", "3"]:
+    num_of_try = 0
+    while  not number_of_template in ["1", "2", "3"] and num_of_try < 3 :
         os.system("clear")
         number_of_template = input("Input the number of template(1 - 3): ")
-
-    os.system("clear")
+        num_of_try += 1
+    if num_of_try == 3:
+        number_of_template = ["1", "2", "3"][random.randint(0, 3)]
+        os.system("clear")
+        print("I will tell a random story from my story base․", end = "\n" * 2)
+    else:
+        os.system("clear")
+   
 
 
     if(number_of_template == "1"):
@@ -102,5 +110,6 @@ while(start):
     print(template, end = "\n" * 3)
     inputed = input("Play again?(Y/N): ").lower() 
     start = (inputed == "y")
+    
 
 os.system("clear")
